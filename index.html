@@ -1,1 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Invite Only</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<div id="login">
+  <h1>Invite Only</h1>
+  <p>As of right now, our site is invite only.</p>
+  <input type="password" id="code" placeholder="Enter invite code">
+  <button onclick="checkCode()">Enter</button>
+  <p id="error"></p>
+</div>
+
+<div id="dashboard" class="hidden">
+  <div class="topbar">
+    <span class="logo">Dashboard</span>
+    <div class="tabs">
+      <button onclick="showTab('home')">Home</button>
+      <button onclick="showTab('games')">Games</button>
+      <button onclick="showTab('settings')">Settings</button>
+    </div>
+  </div>
+
+  <div id="home" class="tab">
+    <h2>Welcome</h2>
+    <p>Version 1.0.0</p>
+  </div>
+
+  <div id="games" class="tab hidden">
+    <h2>Games</h2>
+    <ul>
+      <li><a href="https://playsnake.org" target="_blank">Snake</a></li>
+      <li><a href="https://tetris.com/play-tetris" target="_blank">Tetris</a></li>
+    </ul>
+  </div>
+
+  <div id="settings" class="tab hidden">
+    <h2>Settings</h2>
+
+    <h3>Tab Cloaker</h3>
+    <select onchange="cloakTab(this.value)">
+      <option value="">Select</option>
+      <option value="drive">Google Drive</option>
+      <option value="classroom">Google Classroom</option>
+      <option value="docs">Google Docs</option>
+    </select>
+
+    <h3>about:blank Mask</h3>
+    <button onclick="aboutBlank()">Open in about:blank</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
